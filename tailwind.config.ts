@@ -1,14 +1,19 @@
-import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
-export default {
-  content: ["./src/**/*.tsx"],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-      },
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: ['./src/**/*.{js,ts,jsx,tsx}', './public/index.html'],
+    theme: {
+        extend: {
+            colors: {
+                'blue': '#3D5AFE',
+                'green': '#2ECC71'
+            },  
+            fontFamily:{
+                releway: ['Releway', ...fontFamily.sans]
+            }
+        },
     },
-  },
-  plugins: [],
-} satisfies Config;
+    plugins: [],
+
+};
