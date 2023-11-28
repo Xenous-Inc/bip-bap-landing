@@ -1,9 +1,10 @@
 import Link from "next/link";
-
+import "./../styles/globals.css";
 import { CreatePost } from "~/app/_components/create-post";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
-import { FirstPage } from "./_components/firsr-page";
+import { MainPage } from "./_components/MainPage";
+import { SecondPage } from "./_components/second";
 
 export default async function Home() {
   const hello = await api.post.hello.query({ text: "from tRPC" });
@@ -11,7 +12,8 @@ export default async function Home() {
 
   return (
     <main>
-      <FirstPage />
+      <MainPage />
+      <SecondPage />
     </main>
   );
 }
